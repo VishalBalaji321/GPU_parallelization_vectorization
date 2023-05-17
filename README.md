@@ -7,12 +7,9 @@ Exploring the benefits of using vectorized, parallelized implementations in GPU
     - Need for matmul computation
 - [ ] Implement benchmarking script for different networks
     - [ ] Support both CPU and CUDA device targets
-    - [ ] Optional using RT Tensor cores
-    - [ ] Vision Networks
-        - [ ] ResNet
-        - [ ] EfficientNet
-        - [ ] ConvNext
-        - [ ] Transformer based network
-    - [ ] NLP networks
+    - [ ] Use AMP (Automatic mixed precision) for calculation
+            - CPU Autocast is considerably slower than normal autocast. Possible Reason: The output is bfloat16 and cpu is not optimized for it
+            - GPU Autocast is faster for matmul of larger matrices. Smaller matrices are still significantly faster when computed using normal
+    - [ ] Simple CNN (Matmul vs for-loop)
 - [ ] Create vectorized RL agents
-    - [ ] Using Sumo-highway .cfg?
+    - [ ] Q-Learning with OpenAI Gym
